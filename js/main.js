@@ -10,7 +10,7 @@ function addImg() {
     //document.getElementById("whatsOn").innerText = $on;
     $on = 1;
     
-    document.body.style.backgroundImage = "url(gear1.jpg)";
+    document.body.style.backgroundImage = "url(img/1.jpg)";
     document.getElementById("backImg").innerText = "Change Background Image";
     
   }else{
