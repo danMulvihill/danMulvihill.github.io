@@ -1,0 +1,44 @@
+.container{background-color:#ccd; padding:1% 2%; opacity: 0.9 }
+h1,h3{text-align:center;}
+
+body {background-color:#223;font-size: 1.2rem; font-family: Gotham, Arial, sans-serif;}
+button {
+    background-color: #223;
+    border-radius:8%;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.8rem;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    transition: all 700ms;
+}
+
+a:hover {
+       text-decoration: underline;
+}
+
+ul { list-style-type:none}
+
+li{
+    margin-top: 10px;
+
+}
+
+#control {font-size: 0.8rem; float:right;display:none}
+#ctrl {font-size: 0.2rem; float:right; display:none;padding: 1px}
+@media screen and (min-width: 700px) {
+    
+    /* body {font-size: 1.2rem; background-image: url("gear.jpg");} */
+    #control {display:inline}
+    .container{width:80%; margin: 10% auto; border-radius:5px; }
+    h1 {float:left;}	 
+    h3 {float:right;}
+    p{clear:both;}
+}
