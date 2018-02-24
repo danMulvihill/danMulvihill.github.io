@@ -3,6 +3,12 @@ body{
     font-size: 16px; 
     font-family:  Gotham, 'Arial Narrow', Arial, sans-serif, sans-serif;
 }
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
 h2, h3{
     margin: 0;
 }
