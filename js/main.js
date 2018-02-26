@@ -40,6 +40,8 @@ function upOp(opLevel){
 //changes the opacity of the container with text
     document.getElementById("container").style.opacity = opLevel;
 }
+
+//toggles the hide/show button
 function hideControl(){
     document.getElementById("toggle-hide").style.display = "none";
     document.getElementById("hide").style.display = "none";
