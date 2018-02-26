@@ -12,17 +12,28 @@ function addImg() {
     
     document.body.style.backgroundImage = "url(img/1.jpg)";
     document.getElementById("backImg").innerText = "Change Background Image";
+    document.querySelector("#color-panel").style.display = "none";
+    document.getElementById("opControl").style.display = "inline";
     
   }else{
    //document.getElementById("whatsOn").innerText = $on;
    imageOn += 1;
-   if(imageOn==7) document.getElementById("backImg").innerText = "Remove Background Image";
-   if(imageOn==8) {
-   	imageOn=null;
-    	document.getElementById("backImg").innerText = "Add Background Image";
+   if(imageOn==4) {
+      document.getElementById("backImg").innerText = "Remove Background Image";
+    
+   }
+   if(imageOn==5) {
+   	  imageOn=null;
+      document.getElementById("backImg").innerText = "Add Background Image";
+      document.querySelector("#color-panel").style.display = "inline";
+      document.getElementById("opControl").style.display = "none";
     	}
    document.body.style.backgroundImage = "url(img/"+imageOn+".jpg)";
    }
+}
+
+function changeCol(colorChoice){
+  document.body.style.backgroundColor = colorChoice
 }
 
 function upOp(opLevel){
@@ -30,12 +41,15 @@ function upOp(opLevel){
     document.getElementById("container").style.opacity = opLevel;
 }
 function hideControl(){
-    document.getElementById("control").style.display = "none";
-    document.getElementById("ctrl").style.display = "block";
+    document.getElementById("toggle-hide").style.display = "none";
+    document.getElementById("hide").style.display = "none";
+    document.getElementById("show").style.display = "inline";
+
  }
  function showControl(){
-    document.getElementById("control").style.display = "block";
-    document.getElementById("ctrl").style.display = "none";
+    document.getElementById("toggle-hide").style.display = "inline";
+    document.getElementById("hide").style.display = "inline";
+    document.getElementById("show").style.display = "none";
  }
 
 

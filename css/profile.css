@@ -1,7 +1,13 @@
-.container{background-color:#ccd; padding:1% 2%; opacity: 0.9 }
+.container{
+    position: relative;
+    background-color:#ccd; 
+    padding:1% 2%; 
+    opacity: 0.9
+ }
+
 h1,h3{text-align:center;}
 
-body {background-color:#223;font-size: 1.2rem; font-family: Gotham, Arial, sans-serif;}
+body {background-color:black;font-size: 1.2rem; font-family: Gotham, Arial, sans-serif;}
 button {
     background-color: #223;
     border-radius:8%;
@@ -14,7 +20,13 @@ button {
     font-size: 0.8rem;
     margin: 4px 2px;
     cursor: pointer;
+    transition: all 1s;
 }
+
+button:hover{
+    background-color: crimson;
+}
+
 a{
     text-decoration: none;
     transition: all 700ms;
@@ -22,6 +34,7 @@ a{
 
 a:hover {
        text-decoration: underline;
+       color: crimson;
 }
 
 ul { list-style-type:none}
@@ -31,12 +44,55 @@ li{
 
 }
 
-#control {font-size: 0.8rem; float:right;display:none}
-#ctrl {font-size: 0.2rem; float:right; display:none;padding: 1px}
+#control {
+    font-size: 0.8rem; 
+    float:right;
+    display:none
+}
+#ctrl {
+    font-size: 0.2rem; 
+    float:right; 
+    display:none;
+    padding: 1px;
+}
+.color-panel{
+
+}
+
+/* .side-colors{
+    position: absolute;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+} */
+#col1, #col2, #col3, #col4{
+    width:20px;
+    height: 20px;
+}
+#col1{    
+    top: 50px;
+    background-color: #223;
+}
+#col2{
+    top:75px;
+    background: darkgreen;
+}
+
+#col3{
+    top:100px;
+    background-color: blueviolet;
+}
+#col4{
+    top:125px;
+    background-color: darkslategray
+}
+
 @media screen and (min-width: 700px) {
     
-    /* body {font-size: 1.2rem; background-image: url("gear.jpg");} */
+
     #control {display:inline}
+    #opControl{display:none}
+    #show {display:none}
     .container{width:80%; margin: 10% auto; border-radius:5px; }
     h1 {float:left;}	 
     h3 {float:right;}

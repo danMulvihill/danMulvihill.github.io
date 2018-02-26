@@ -11,19 +11,32 @@
 </head>
 <body>
     <div id="container" class="container">
-        <div id="ctrl"><button id="show">+</button></div>
-        <div id="control">
-            <button id="backImg">Add a background image</button>
-            <span id="whatsOn"></span>
-            <span id="opControl">Opacity: 
-                <button onclick="upOp(.7)">70%</button> 
-                <button onclick="upOp(.8)">80%</button> 
-                <button onclick="upOp(.9)">90%</button> 
-                <button onclick="upOp(1)">100%</button>
-            </span>
-            <button id="hide">Hide Controls</button>
+        <div id="top-row">
+            <!-- <div id="ctrl"><button id="show">+</button></div> -->
+            <div id="control">
+                <span id="toggle-hide">
+                    <button id="backImg">Add a background image</button>
+                    <span id="whatsOn"></span>
+                    <span id="color-panel">Add background color:
+                        <button onclick="changeCol('#223')" class="colors" id="col1"></button>
+                        <button onclick="changeCol('darkgreen')" class="colors" id="col2"></button>
+                        <button onclick="changeCol('blueviolet')" class="colors" id="col3"></button>
+                        <button onclick="changeCol('darkslategray')" class="colors" id="col4"></button>
+                    </span>
+                    <span id="opControl">Opacity: 
+                        <button onclick="upOp(.7)">70%</button> 
+                        <button onclick="upOp(.8)">80%</button> 
+                        <button onclick="upOp(.9)">90%</button> 
+                        <button onclick="upOp(1)">100%</button>
+                    </span>
+                </span>
+                <button id="hide">Hide Controls</button>
+                <button id="show">+</button>
+            </div>
+            <div class ="colors">
+
+            </div>
         </div>
-        <h2 id="greeting"></h2>
         <h1> Daniel Mulvihill </h1>
         <p>This is my 'splash' page for quick downloading. For more complicated websites I've done, see:</p>
         <ul>
