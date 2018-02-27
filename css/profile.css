@@ -2,12 +2,17 @@
     position: relative;
     background-color:#ccd; 
     padding:1% 2%; 
-    opacity: 0.9
+    opacity: 1;
  }
 
 h1,h3{text-align:center;}
 
-body {background-color:black;font-size: 1.2rem; font-family: Gotham, Arial, sans-serif;}
+body {
+    background-color:black;
+    font-size: 1.2rem; 
+    font-family: Gotham, Arial, sans-serif;
+}
+
 button {
     background-color: #223;
     border-radius:8%;
@@ -49,14 +54,12 @@ li{
     float:right;
     display:none
 }
-#ctrl {
-    font-size: 0.2rem; 
-    float:right; 
-    display:none;
-    padding: 1px;
-}
-.color-panel{
 
+#color-panel{
+    position: relative;
+    padding-right: 110px;
+    padding-left: 10px;
+   
 }
 
 /* .side-colors{
@@ -65,27 +68,32 @@ li{
     width: 20px;
     height: 20px;
 } */
+
 #col1, #col2, #col3, #col4{
     width:20px;
     height: 20px;
+    position: absolute;
+    left: -1000px;
 }
 #col1{    
-    top: 50px;
+    /* left: 140px; */
     background-color: #223;
 }
 #col2{
-    top:75px;
+    /* left:165px; */
     background: darkgreen;
 }
 
 #col3{
-    top:100px;
+    /* left:190px; */
     background-color: blueviolet;
 }
 #col4{
-    top:125px;
+    /* left:215px; */
     background-color: darkslategray
 }
+
+
 
 @media screen and (min-width: 700px) {
     

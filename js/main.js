@@ -55,6 +55,35 @@ function hideControl(){
  }
 
 
+//jQuery animate:
+
+ $(document).ready(function(){
+  //$("button").click(function(){
+      
+      $("#col1").animate({
+          left: '215px'
+      },250);
+      $("#col2").animate({
+        left: '190px'
+      },500);
+      $("#col3").animate({
+        left: '165px'
+      },1000);
+      $("#col4").animate({
+        left: '140px'
+      },2000, fadeCtrls);
+  //});
+    
+      function fadeCtrls(){
+        $("#hide").fadeOut(3000);
+        $("#toggle-hide").fadeOut(3000);
+        $("#show").delay(3001).fadeIn(4000);
+      }
+
+});
+
+
+
 
 //By default (on page load)
 //if a firstName cookie is set, update the DOM to display the val of the cookie
