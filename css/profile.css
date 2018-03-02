@@ -1,3 +1,35 @@
+
+/* general settings */
+
+body {
+    background-color:black;
+    font-size: 1.2rem; 
+    font-family: Gotham, Arial, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    transition: all 700ms;
+}
+
+a:hover {
+       text-decoration: underline;
+       color: crimson;
+    
+}
+
+h1,h3{
+    text-align:center;
+    margin-top: 4px;
+}
+
+ul { list-style-type:none}
+
+li{
+    margin-top: 10px;
+
+}
+
 .container{
     position: relative;
     background-color:#ccd; 
@@ -5,18 +37,17 @@
     opacity: 1;
  }
 
-
-
-h1,h3{
-    text-align:center;
-    margin-top: 4px;
+ /* top-right icons */
+#icons span{
+    font-size: 1.5em;
+    margin-right:10px;   
 }
 
-body {
-    background-color:black;
-    font-size: 1.2rem; 
-    font-family: Gotham, Arial, sans-serif;
+#icons a:hover{
+    text-decoration: none;
 }
+
+ /* general settings for buttons*/
 
 button {
     background-color: #223;
@@ -38,47 +69,7 @@ button:hover{
     /* transform: scale(1.5); */
 }
 
-#color-panel button:hover{
-    transform: scale(1.5);
-}
-
-#show button:hover{
-    transform: rotate(360deg)
-}
-
-
-
-a{
-    text-decoration: none;
-    transition: all 700ms;
-}
-
-a:hover {
-       text-decoration: underline;
-       color: crimson;
-    
-}
-
-#icon{
-    
-}
-
-#icons span{
-    font-size: 1.5em;
-    margin-right:10px;   
-}
-
-#icons a:hover{
-    text-decoration: none;
-}
-
-ul { list-style-type:none}
-
-li{
-    margin-top: 10px;
-
-}
-
+/* control buttons */
 #control {
     font-size: 0.8rem; 
     float:right;
@@ -88,16 +79,34 @@ li{
 #color-panel{
     position: relative;
     padding-right: 110px;
-    padding-left: 10px;
-   
+    padding-left: 10px;  
 }
 
-/* .side-colors{
-    position: absolute;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-} */
+#color-panel button:hover{
+    transform: scale(1.5);
+}
+
+#show button{
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    background: #ccd;
+    /* color:white; */
+}
+#show button span{
+    font-size: 1.5em;
+    color:blue;
+    background-color: #ccd;
+}
+
+#show button:hover{
+    transform: rotate(360deg)
+}
+
+
+
+
+/* color buttons*/
 
 #col1, #col2, #col3, #col4{
     width:20px;
@@ -136,16 +145,11 @@ li{
         width:80%; 
         /* margin: 10% auto;  */
         border-radius:5px; 
-    }
-
-    .container{
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
     }
-
-
 
     h1 {float:left;}	 
     h3 {float:right;}
