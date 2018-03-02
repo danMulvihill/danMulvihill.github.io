@@ -1,44 +1,105 @@
 
+//jQuery animate:
+
+$(document).ready(function(){
+   var cookieSet = !Cookies.get('imageCookie') && !Cookies.get('colorChoice');
+   console.log(cookieSet);
+   if(cookieSet){
+      
+      $("#col1").animate({
+          left: '215px'
+      },250);
+      $("#col2").animate({
+        left: '190px'
+      },500);
+      $("#col3").animate({
+        left: '165px'
+      },1000);
+      $("#col4").animate({
+        left: '140px'
+      },2000, fadeCtrls); 
+      function fadeCtrls(){
+        $("#hide").fadeOut(3000);
+        $("#toggle-hide").fadeOut(3000);
+        $("#show").delay(3001).fadeIn(300);
+       }
+ 
+  }else{
+    hideControl();
+    $("#col1").css("left", "215px");
+    $("#col2").css("left", "190px");
+    $("#col3").css("left","165px");
+    $("#col4").css("left", "140px");
+  }
+
+    if (Number(Cookies.get('imageCookie'))>0){
+      console.log("imageCookie: ", Cookies.get("imageCookie"));
+      imageOn = Number(Cookies.get("imageCookie"));
+      document.body.style.backgroundImage = "url(img/"+imageOn+".jpg)";
+      if(imageOn) document.getElementById("backImg").innerText = "Change Background Image";
+      opLevel = Cookies.get("opLevel");
+      document.getElementById("container").style.opacity = opLevel; 
+      document.querySelector("#color-panel").style.display = "none";
+      document.getElementById("opControl").style.display = "inline";
+      
+    }else if (Cookies.get('colorChoice')){
+      console.log("colorChoie cookie: ", Cookies.get("colorChoice"));
+      imageOn = 0;
+      colorChoice = Cookies.get("colorChoice");
+      document.body.style.backgroundColor = colorChoice;
+      
+
+    }else{
+      imageOn = 0;
+      console.log("no cookie", imageOn)
+    }
+});//end document.ready
+
+
 document.getElementById("backImg").addEventListener("click", addImg );
 document.getElementById("show").addEventListener("click", showControl );
 document.getElementById("hide").addEventListener("click", hideControl );
 
-var imageOn;
+
 function addImg() {
 //toggles through different background images depending on user input  
   if(!imageOn){
-    //document.getElementById("whatsOn").innerText = $on;
+    console.log("first if", imageOn);
     imageOn = 1;
     
     document.body.style.backgroundImage = "url(img/1.jpg)";
     document.getElementById("backImg").innerText = "Change Background Image";
     document.querySelector("#color-panel").style.display = "none";
     document.getElementById("opControl").style.display = "inline";
-    
+    Cookies.set("imageCookie", imageOn);
   }else{
-   //document.getElementById("whatsOn").innerText = $on;
+   console.log("else", imageOn);
    imageOn += 1;
+   Cookies.set("imageCookie",imageOn);
    if(imageOn==4) {
       document.getElementById("backImg").innerText = "Remove Background Image";
-    
+       
    }
    if(imageOn==5) {
-   	  imageOn=null;
-      document.getElementById("backImg").innerText = "Add Background Image";
-      document.querySelector("#color-panel").style.display = "inline";
-      document.getElementById("opControl").style.display = "none";
+        imageOn=null;
+        Cookies.set("imageCookie",imageOn);
+        document.getElementById("backImg").innerText = "Add Background Image";
+        document.querySelector("#color-panel").style.display = "inline";
+        document.getElementById("opControl").style.display = "none";
     	}
    document.body.style.backgroundImage = "url(img/"+imageOn+".jpg)";
    }
 }
 
 function changeCol(colorChoice){
-  document.body.style.backgroundColor = colorChoice
+  document.body.style.backgroundColor = colorChoice;
+  Cookies.set("colorChoice", colorChoice);
 }
 
 function upOp(opLevel){
 //changes the opacity of the container with text
-    document.getElementById("container").style.opacity = opLevel;
+    document.getElementById("container").style.opacity = opLevel; 
+    Cookies.set("opLevel", opLevel);
 }
 
 //toggles the hide/show button
@@ -55,33 +116,6 @@ function hideControl(){
  }
 
 
-//jQuery animate:
-
- $(document).ready(function(){
-  //$("button").click(function(){
-      
-      $("#col1").animate({
-          left: '215px'
-      },250);
-      $("#col2").animate({
-        left: '190px'
-      },500);
-      $("#col3").animate({
-        left: '165px'
-      },1000);
-      $("#col4").animate({
-        left: '140px'
-      },2000, fadeCtrls);
-  //});
-    
-      function fadeCtrls(){
-        $("#hide").fadeOut(3000);
-        $("#toggle-hide").fadeOut(3000);
-        $("#show").delay(3001).fadeIn(4000);
-      }
-
-});
-
 
 
 
@@ -94,12 +128,12 @@ function hideControl(){
 //   }
 // });
 
-//gets and sets a cookie:
+// //gets and sets a cookie:
 
-//Cookies.set("fname","Dan");
-//document.getElementById("button").addEventListener("click", function(){
+// Cookies.set("fname","Dan");
+// document.getElementById("button").addEventListener("click", function(){
 //   var fname = document.getElementById("fname").value;
 //   Cookies.set("fname", fname);
 //   document.getElementById("greeting").style.display = "none";
 //   document.getElementById("cookieform").innerHTML = "Enjoy your cookie, " +fname; 
-//});
+// });
