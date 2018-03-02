@@ -38,6 +38,9 @@ li{
  }
 
  /* top-right icons */
+#icons{
+    text-align:center;
+}
 #icons span{
     font-size: 1.5em;
     margin-right:10px;   
@@ -152,6 +155,6 @@ button:hover{
     }
 
     h1 {float:left;}	 
-    h3 {float:right;}
+    #icons {float:right;}
     p{clear:both;}
 }
