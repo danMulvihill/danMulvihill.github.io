@@ -30,12 +30,23 @@ button {
     font-size: 0.8rem;
     margin: 4px 2px;
     cursor: pointer;
-    transition: all 1s;
+    transition: all 700ms;
 }
 
 button:hover{
     background-color: crimson;
+    /* transform: scale(1.5); */
 }
+
+#color-panel button:hover{
+    transform: scale(1.5);
+}
+
+#show button:hover{
+    transform: rotate(360deg)
+}
+
+
 
 a{
     text-decoration: none;
@@ -45,6 +56,20 @@ a{
 a:hover {
        text-decoration: underline;
        color: crimson;
+    
+}
+
+#icon{
+    
+}
+
+#icons span{
+    font-size: 1.5em;
+    margin-right:10px;   
+}
+
+#icons a:hover{
+    text-decoration: none;
 }
 
 ul { list-style-type:none}
