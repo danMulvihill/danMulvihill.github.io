@@ -3,29 +3,21 @@
 
 $(document).ready(function(){
   //cookies store the user-chosen settings from previous visits
-   var noCookiesFound = !Cookies.get('userSet.image') && !Cookies.get('userSet.color');
+  var noCookiesFound = !Cookies.get('userSet.image') && !Cookies.get('userSet.color');
    
-   if(noCookiesFound){
-      //animation show if no cookies on browser
-      $("#col1").animate({
-          left: '215px'
-      },250);
-      $("#col2").animate({
-        left: '190px'
-      },500);
-      $("#col3").animate({
-        left: '165px'
-      },1000);
-      $("#col4").animate({
-        left: '140px'
-      },2000, fadeCtrls); 
-      function fadeCtrls(){
-        $("#hide").fadeOut(3000);
-        $("#toggle-hide").fadeOut(3000);
-        $("#show").delay(3001).fadeIn(300);
-       }
+  if(noCookiesFound){
+    //animation show if no cookies on browser
+    $("#col1").animate({ left: '215px'},250);
+    $("#col2").animate({ left: '190px'},500);
+    $("#col3").animate({ left: '165px'},1000);
+    $("#col4").animate({ left: '140px'},2000, fadeCtrls); 
+    function fadeCtrls(){
+      $("#hide").fadeOut(3000);
+      $("#toggle-hide").fadeOut(3000);
+      $("#show").delay(3001).fadeIn(300);
+      }
  
-  }else{
+  }else {
     hideControl();
     $("#col1").css("left", "215px");
     $("#col2").css("left", "190px");
@@ -57,6 +49,9 @@ $(document).ready(function(){
 });//end document.ready
 
 
+//(function(){
+//imageOn, OpLevel and changeCol are global variables. Can I fix that?
+
 //click event listeners to get data from user 
 document.getElementById("backImg").addEventListener("click", addImg );
 document.getElementById("show").addEventListener("click", showControl );
@@ -66,7 +61,7 @@ document.getElementById("hide").addEventListener("click", hideControl );
 function addImg() {
 //toggles through different background images depending on user input  
   if(!imageOn){
-    //console.log("first if", imageOn);
+    console.log("first if", imageOn);
     imageOn = 1;
     
     document.body.style.backgroundImage = "url(img/1.jpg)";
@@ -75,7 +70,7 @@ function addImg() {
     document.getElementById("opControl").style.display = "inline";
     Cookies.set("userSet.image", imageOn);
   }else{
-   //console.log("else", imageOn);
+   console.log("else", imageOn);
    imageOn += 1;
    Cookies.set("userSet.image",imageOn);
    if(imageOn==4) {
@@ -120,9 +115,9 @@ function upOp(opLevel){
 }
 
 
+//})();
 
 
-//By default (on page load)
 //if a firstName cookie is set, update the DOM to display the val of the cookie
 // window.addEventListener("load", function(){ 
 //   if (Cookies.get('fname')){
