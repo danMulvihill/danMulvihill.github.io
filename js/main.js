@@ -61,7 +61,7 @@ document.getElementById("hide").addEventListener("click", hideControl );
 function addImg() {
 //toggles through different background images depending on user input  
   if(!imageOn){
-    console.log("first if", imageOn);
+    //console.log("first if", imageOn);
     imageOn = 1;
     
     document.body.style.backgroundImage = "url(img/1.jpg)";
@@ -70,7 +70,7 @@ function addImg() {
     document.getElementById("opControl").style.display = "inline";
     Cookies.set("userSet.image", imageOn);
   }else{
-   console.log("else", imageOn);
+   //console.log("else", imageOn);
    imageOn += 1;
    Cookies.set("userSet.image",imageOn);
    if(imageOn==4) {
