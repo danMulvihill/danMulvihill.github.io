@@ -2,6 +2,7 @@
 
 
 $(document).ready(function(){
+  
   //cookies store the user-chosen settings from previous visits
   var noCookiesFound = !Cookies.get('userSet.image') && !Cookies.get('userSet.color');
    
@@ -60,7 +61,7 @@ document.getElementById("hide").addEventListener("click", hideControl );
 
 function addImg() {
 //toggles through different background images depending on user input  
-  if(!imageOn){
+  if(typeof imageOn === "undefined" || !imageOn){
     //console.log("first if", imageOn);
     imageOn = 1;
     
