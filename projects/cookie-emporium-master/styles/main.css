@@ -1,0 +1,134 @@
+
+body{
+    background: pink;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    
+}
+
+h1{
+    text-align: center;
+    color: cyan;
+    text-shadow: 2px 2px black;
+}
+
+#out{
+    text-align: center;
+    color: brown;
+}
+
+form{
+    margin-bottom: 25px;
+}
+
+#sug, #choc, #lemon{
+    width: 60%;
+    margin: 15px auto;
+}
+
+#sug button, #choc button, #lemon button{
+    padding: 10px;
+    width: 35%;
+    border-radius: 5%;
+
+}
+#sug button{
+    background: papayawhip
+}
+#choc button{
+    background: chocolate
+}
+#lemon button{
+    background: yellow
+}
+
+span{
+    margin-left: 25px;
+    width: 25%;
+    background: #ccc;
+    padding: 10px;
+    font-size: 1.3em;
+    text-align:center;
+    float: right;
+    opacity: 0.7;
+    border: 1px solid black;
+}
+
+#clearButton button{
+    width: 90%;
+    color: red;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 3%;
+    font-weight: bolder;
+    opacity: 0.7;
+}
+
+#modal{
+    position: fixed;
+    text-align: center;
+    padding: 10px;
+    width: 75%;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 2px #333;
+    background: #fff;
+    display:none;
+    /* opacity: 1.0;
+    transition: opacity 4s;
+    animation: fadeIn 4s; */
+}
+
+#x-button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+}
+
+#more-button{
+    
+    bottom: 5px;
+    background-color: #399;
+    border-radius: 10%;
+    font-size: 1.5em;
+    margin: 0 auto;
+    width: 30%;
+    display: block;
+}
+
+cookie{
+    z-index: -1;
+    width: 25px;
+    height: 25px;
+    background: burlywood;
+    border: 1px solid brown;
+    position: absolute;
+    border-radius: 50%;
+}
+
+
+
+@media (max-width: 700px){
+    #header-p{
+        font-size:1em;
+      
+    }
+
+    #modal{
+        position: fixed;
+        text-align: center;
+        padding: 5px;
+        width: 95%;
+        height: 200px;
+        top: 30%;
+    }
+}

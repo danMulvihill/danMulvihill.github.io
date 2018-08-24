@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#chars_title{
+    text-align: center;
+    color: blue; 
+    font-size: 2rem;
+}
+div#memory_board{
+	background:#CCC;
+	border:#999 1px solid;
+	width:800px;
+	height:540px;
+	padding:24px;
+	margin:0px auto;
+}
+div#memory_board > div{
+	background: blue;
+	border:#000 1px solid;
+	width:71px;
+	height:71px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:64px;
+	cursor:pointer;
+	text-align:center;
+}
+</style>
+<script>
+// Scripted By Adam Khoury in connection with the following video tutorial:
+// http://www.youtube.com/watch?v=c_ohDPWmsM0
+
+let start_chars = [33, 945,1040, 1488,2308,3584,5024,5120,9648,9728, 10241, 12353,12448, 19968]
+let end_chars =   [126, 966,1103, 1514,2361,3635,5108,5759,9727, 9918, 10303,12438, 12543, 40700]
+let char_description = [ 
+			"ASCII",
+			"Greek", 
+            "Cyrillic",
+            "Hebrew",
+            "Devanagari",
+            "Thai",
+            "Cherokee",
+            "Cree",
+            "Shapes",
+            "Miscellaneous Symbols",
+            "Braille",
+            "Hiragana",
+            "Katakana",
+            "Chinese" ]
+//randomly picks a set of chars
+let set_picked = Math.floor(Math.random() * start_chars.length)
+
+let start_char = start_chars[set_picked];
+let end_char = end_chars[set_picked];
+let quantity_char =  end_char - start_char;
+console.log(start_chars);
+console.log(set_picked);
+console.log(start_char, end_char)
+let memory_array = [];
+let i = 1;
+while (i <= 12){
+    //picks 12 pairs  of characters from the selected set
+   
+
+   //console.log("quantity: "+quantity_char)
+   let randAdd = Math.floor((Math.random() * quantity_char) + 1);
+   let pickedChar = start_char + randAdd;
+   //console.log(set_picked+': '+randAdd, pickedChar, memory_array);
+
+   
+   //console.log(memory_array.indexOf('&#'+pickedChar+';'));
+   if (memory_array.indexOf('&#'+pickedChar+';')===-1){
+        memory_array.push('&#'+pickedChar+';');
+        memory_array.push('&#'+pickedChar+';'); 
+   }else{
+       continue;
+   }
+   //console.log(memory_array.indexOf('&#'+pickedChar+';')); 
+   i++;
+   
+}
+
+var memory_values = [];
+var memory_tile_ids = [];
+var tiles_flipped = 0;
+Array.prototype.memory_tile_shuffle = function(){
+    var i = this.length, j, temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+    }
+}
+function newBoard(){
+	tiles_flipped = 0;
+	var output = '';
+    memory_array.memory_tile_shuffle();
+	for(var i = 0; i < memory_array.length; i++){
+		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+	}
+    document.getElementById('chars_title').innerHTML = char_description[set_picked]
+	document.getElementById('memory_board').innerHTML = output;
+}
+function memoryFlipTile(tile,val){
+	if(tile.innerHTML == "" && memory_values.length < 2){
+		tile.style.background = '#FFF';
+		tile.innerHTML = val;
+		if(memory_values.length == 0){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+		} else if(memory_values.length == 1){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+			if(memory_values[0] == memory_values[1]){
+				tiles_flipped += 2;
+				// Clear both arrays
+				memory_values = [];
+            	memory_tile_ids = [];
+				// Check to see if the whole board is cleared
+				if(tiles_flipped == memory_array.length){
+					alert("Board cleared... generating new board");
+					document.getElementById('memory_board').innerHTML = "";
+					newBoard();
+				}
+			} else {
+				function flip2Back(){
+				    // Flip the 2 tiles back over
+				    var tile_1 = document.getElementById(memory_tile_ids[0]);
+				    var tile_2 = document.getElementById(memory_tile_ids[1]);
+				    tile_1.style.background = 'blue';
+            	    tile_1.innerHTML = "";
+				    tile_2.style.background = 'blue';
+            	    tile_2.innerHTML = "";
+				    // Clear both arrays
+				    memory_values = [];
+            	    memory_tile_ids = [];
+				}
+				setTimeout(flip2Back, 700);
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+    <h3 id="chars_title"></h3>
+<div id="memory_board"></div>
+<script>newBoard();</script>
+</body>
+</html>
