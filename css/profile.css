@@ -3,7 +3,7 @@
 
 body {
     background-color:black;
-    font-size: 1.2rem; 
+    font-size: 0.9rem; 
     font-family: Gotham, Arial, sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
@@ -142,6 +142,10 @@ button:hover{
 
 @media screen and (min-width: 700px) {
     
+    body{
+        font-size: 1.2rem;
+    }
+
 
     #control {display:inline}
     #opControl{display:none}
