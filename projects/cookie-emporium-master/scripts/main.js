@@ -58,6 +58,7 @@ if( !cookie ){
         amt++;
         Cookies.set("lemon", amt);
         document.querySelector("#lemon .out").textContent = amt;
+
         rainCookies("yellow")
     }
 
@@ -83,9 +84,13 @@ if( !cookie ){
 function rainCookies(bgColor){
     var cookieEl = document.createElement("cookie");
     document.querySelector("body").appendChild(cookieEl);
-    var randX = Math.floor(Math.random()*98)+1;
-    var randY = Math.floor(Math.random()*96)+1;
+    //if (x==0) 
+    var maxSeparation = 96;
+    //else maxSeparation = x + 5;
+    var randX = Math.floor(Math.random()*maxSeparation)+1;
+    var randY = Math.floor(Math.random()*maxSeparation)+1;
     cookieEl.setAttribute("style", "top:"+randY+"%; left:"+randX+"%; background-color: "+bgColor)
+    
 
 }
 
