@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title>Unicode Chess</title>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+
+.piece {display:inline-block;width:12.5%;font-size:2em;text-align:center;z-index:100;
+        position:relative;top:85px;color:darkred}
+.piece.b{top:-85px;color:darkslategray}
+.blank{color:#FFF;border:1px solid black;display:inline-block;width:12.5%;font-size:2em;}
+.g{background-color:#ccc;}
+.g.blank{color:#ccc;}
+        
+@media screen and (min-width: 480px) {
+    .chessboard {
+        
+        max-width:730px;margin:0 auto;
+    }
+    .blank{font-size:3em;}
+    .piece{font-size:3em;}
+    .piece{top:120px}
+    .piece.b{top:-120px}
+}
+</style>
+  </head>
+  <body>
+
+<div class="chessboard">
+
+<div>
+	<div class="piece">&#x2656;</div><div class="piece">&#x2658;</div><div class="piece">&#x2657;</div><div class="piece">&#x2654;</div><div class="piece">&#x2655;</div><div class="piece">&#x2657;</div><div class="piece">&#x2658;</div><div class="piece">&#x2656;</div>
+</div>
+
+<div>
+	<div class="piece">&#x2659;</div><div class="piece">&#x2659;</div><div class="piece">&#x2659;</div><div class="piece">&#x2659;</div><div class="piece">&#x2659;</div><div class="piece">&#x2659;</div><div class="piece">&#x2659;</div><div class="piece">&#x2659;</div>
+</div>
+    
+<div>
+	<div class="blank">.</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">.</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div>
+</div>
+
+<div>
+	<div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div>
+</div>
+
+<div>
+	<div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div>
+    </div>
+<div>
+	<div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div>
+</div>
+    
+<div>
+	<div class="blank">.</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">.</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div>
+</div>
+
+<div>
+	<div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div>
+</div>
+
+
+<div>
+	<div class="blank">.</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">.</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div>
+</div>
+
+<div>
+	<div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div><div class="blank g">0</div><div class="blank">0</div>
+</div>
+
+<div>
+	<div class="piece b">&#x265f;</div><div class="piece b">&#x265f;</div><div class="piece b">&#x265f;</div><div class="piece b">&#x265f;</div><div class="piece b">&#x265f;</div><div class="piece b">&#x265f;</div><div class="piece b">&#x265f;</div><div class="piece b">&#x265f;</div>
+</div>
+
+<div>
+	<div class="piece b">&#x265c;</div><div class="piece b">&#x265e;</div><div class="piece b">&#x265d;</div><div class="piece b">&#x265b;</div><div class="piece b">&#x265a;</div><div class="piece b">&#x265d;</div><div class="piece b">&#x265e;</div><div class="piece b">&#x265c;</div>
+
+</div>  
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+     $(".piece").draggable();
+    </script>
+    
+  </body>
+</html>
