@@ -3,7 +3,7 @@
 
 body {
     background-color:black;
-    font-size: 0.9rem; 
+    font-size: 1.0rem; 
     font-family: Gotham, Arial, sans-serif;
     background-size: cover;
     background-repeat: no-repeat;
@@ -140,7 +140,7 @@ button:hover{
 
 
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
     
     body{
         font-size: 1.2rem;
@@ -160,8 +160,9 @@ button:hover{
         top: 50%;
         transform: translate(-50%, -50%);
     }
-
-    h1 {float:left;}	 
+    .heading{display:flex; justify-content: space-between;}
+    /* h1 {float:left;}	 
     #icons {float:right;}
-    p{clear:both;}
+
+    p{clear:both;} */
 }
