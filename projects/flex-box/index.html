@@ -1,0 +1,42 @@
+<style>
+    #box-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      /* others:  */
+      align-items: flex-start;
+      flex-wrap: nowrap;
+
+      height: 500px;
+      border: 2px solid green;
+    }
+    #box-1 {
+      background-color: dodgerblue;
+      /* flex is shorthand for flex-grow flex-shrink flex-basis */
+      flex: 0 1 auto;
+      order: 1;
+      align-self: flex-start;
+      color: white;padding: 10px;
+    }
+  
+    #box-2 {
+      background-color: orangered;
+      flex: 0 1 auto;
+      order: 2;
+      align-self: center;
+      color: white; padding: 10px;
+    }
+    #box-3 {
+      background-color: lime;
+      flex: 0 1 auto;
+      align-self: flex-end;
+      order: 3;
+      color: white; padding: 10px;
+    }
+  </style>
+  
+  <div id="box-container">
+    <div id="box-1">Hi</div>
+    <div id="box-2">X</div>
+    <div id="box-3">Bye</div>
+  </div>

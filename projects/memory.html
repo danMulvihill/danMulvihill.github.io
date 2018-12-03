@@ -6,17 +6,23 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Unicode Memory</title>
 <style>
+#title h1{
+		padding:0; margin: 0;
+	}
 #chars_title{
     text-align: center;
     color: blue; 
     font-size: 2rem;
 }
 div#memory_board{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items:flex-end;
 	background:#CCC;
 	border:#999 1px solid;
-	width:800px;
-	height:540px;
-	padding:24px;
+	width:90%;
+	padding:7px;
 	margin:0px auto;
 }
 div#memory_board > div{
@@ -25,11 +31,20 @@ div#memory_board > div{
 	width:71px;
 	height:71px;
 	float:left;
-	margin:10px;
-	padding:20px;
+	margin:7px;
+	padding:7px;
 	font-size:64px;
 	cursor:pointer;
 	text-align:center;
+}
+
+@media (min-width: 800px){
+	#title{
+	display: flex;
+	justify-content: space-between;
+	
+	}
+	
 }
 </style>
 <script>
@@ -150,8 +165,11 @@ function memoryFlipTile(tile,val){
 </script>
 </head>
 <body>
-	<h1>Unicode Memory Game</h1><p>Refresh the page for a new language</p>
-    <h3 id="chars_title"></h3>
+	<div id="title">
+			<h1>Unicode Memory Game</h1>
+			<p>Refresh the page for a new language</p>	
+	</div>
+	<h3 id="chars_title"></h3>
 <div id="memory_board"></div>
 <script>newBoard();</script>
 </body>
