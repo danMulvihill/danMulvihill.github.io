@@ -21,7 +21,7 @@ div#memory_board{
 	align-items:flex-end;
 	background:#CCC;
 	border:#999 1px solid;
-	width:90%;
+	width:100%;
 	max-width: 700px;
 	padding:7px;
 	margin:0px auto;
@@ -32,7 +32,7 @@ div#memory_board > div{
 	width:71px;
 	height:71px;
 	float:left;
-	margin:7px;
+	
 	padding:7px;
 	font-size:64px;
 	cursor:pointer;
@@ -43,9 +43,13 @@ div#memory_board > div{
 	#title{
 	display: flex;
 	justify-content: space-between;
-	
 	}
-	
+	div#memory_board{
+		width:90%;
+	}
+	div#memory_board > div{
+		margin: 7px;
+	}
 }
 </style>
 <script>
