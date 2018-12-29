@@ -17,6 +17,35 @@
         <div>About Me</div>
         <div><a href="http://www.embraceyourinnerengineer.com">Embrace Your Inner Engineer</a></div>
     </header>
+    <footer class="footer">
+        <div id="footer">
+                <div id="control">
+                                      
+                    <span id="toggle-hide">
+                         
+                        <button id="backImg">Add a background image</button>
+                        
+                        <span id="color-panel" style="color:white;">Add background color:
+                            <button onclick="changeCol('#223')" class="colors" id="col1"></button>
+
+                            <button onclick="changeCol('darkgreen')" class="colors" id="col2"></button>
+                            <button onclick="changeCol('blueviolet')" class="colors" id="col3"></button>
+                            <button onclick="changeCol('darkslategray')" class="colors" id="col4"></button>
+                        </span>
+                        <span id="opControl">Opacity: 
+                            <button onclick="upOp(.7)">70%</button> 
+                            <button onclick="upOp(.8)">80%</button> 
+                            <button onclick="upOp(.9)">90%</button> 
+                            <button onclick="upOp(1)">100%</button>
+                        </span>
+                    </span>
+                    <button id="hide">Hide Controls</button>
+                    <span id="show" style="color: white;">Customize this page: 
+                        <button><span class="icon-gear"></span></button>
+                    </span>
+                </div>
+        </div>
+    </footer>
     <div id="container" class="container">
         <div class="heading">
             <h1> Daniel Mulvihill </h1>
@@ -72,35 +101,7 @@
 
     <aside class="aside aside-1"></aside>
     <aside class="aside aside-2"></aside>
-    <footer class="footer">
-            <div id="footer">
-                    <div id="control">
-                                          
-                        <span id="toggle-hide">
-                             
-                            <button id="backImg">Add a background image</button>
-                            
-                            <span id="color-panel" style="color:white;">Add background color:
-                                <button onclick="changeCol('#223')" class="colors" id="col1"></button>
-    
-                                <button onclick="changeCol('darkgreen')" class="colors" id="col2"></button>
-                                <button onclick="changeCol('blueviolet')" class="colors" id="col3"></button>
-                                <button onclick="changeCol('darkslategray')" class="colors" id="col4"></button>
-                            </span>
-                            <span id="opControl">Opacity: 
-                                <button onclick="upOp(.7)">70%</button> 
-                                <button onclick="upOp(.8)">80%</button> 
-                                <button onclick="upOp(.9)">90%</button> 
-                                <button onclick="upOp(1)">100%</button>
-                            </span>
-                        </span>
-                        <button id="hide">Hide Controls</button>
-                        <span id="show" style="color: white;">Customize this page: 
-                            <button><span class="icon-gear"></span></button>
-                        </span>
-                    </div>
-            </div>
-    </footer>
+  
 </div>
 
 
