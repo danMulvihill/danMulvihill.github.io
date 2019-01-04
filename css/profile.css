@@ -31,14 +31,12 @@ ul { list-style-type:none}
 
 li{
     margin-top: 10px;
-
 }
 
 .wrapper{
     display:flex;
     flex-flow: row wrap;
 }
-
 
 .wrapper > * {
     padding: 10px;
@@ -57,21 +55,14 @@ li{
  .header a:visited{
      color: peachpuff
  }
-  
-.footer {
-   color: white;
-}
 
 .container{
     /* position: relative; */
     background-color:#ccd; 
     padding:1% 2%; 
     opacity: 1;
- }
 
- .aside{
  }
-
 
  /* top-right icons */
 #icons{
@@ -116,9 +107,9 @@ button:hover{
 }
 
 #color-panel{
-    position: relative;
-    padding-right: 110px;
-    padding-left: 10px;  
+    /* position: relative; */
+    /* padding-right: 110px;
+    padding-left: 10px;   */
 }
 
 #color-panel button:hover{
@@ -143,14 +134,12 @@ button:hover{
 }
 
 
-
-
 /* color buttons*/
 
 #col1, #col2, #col3, #col4{
     width:20px;
     height: 20px;
-    position: absolute;
+    /* position: absolute; */
     left: -1000px;
 }
 #col1{    
@@ -171,6 +160,9 @@ button:hover{
     background-color: darkslategray
 }
 
+.controls>span{
+    display: block;
+}
 
 
 @media screen and (min-width: 900px) {
@@ -183,21 +175,27 @@ button:hover{
         align-items: center
         
     } */
+
+
+
 }
     @media all and (min-width: 600px) {
         .aside { flex: 1 auto; }
       }
       
-      @media all and (min-width: 800px) {
-        .container   { flex: 7 0px; }
-        .header { margin-bottom: 3%; }
-        .aside-1 { order: 1; } 
-        .container    { order: 2; }
-        .aside-2 { order: 3; }
-        .footer  { order: 4; margin-top: 2%}
-      }
+    @media all and (min-width: 800px) {
+    .container   { flex: 7 0px; }
+    .header { margin-bottom: 3%; }
+    .aside-1 { order: 1; } 
+    .container    { order: 2; }
+    .aside-2 { order: 3; }
+    .footer  { order: 4; margin-top: 2%}
+    }
       
-     
+    .controls>span{
+        display: inline;
+        justify-content: flex-end;
+    } 
       
 
     #control {display:inline}
@@ -209,10 +207,10 @@ button:hover{
         /* margin-top: 7%; */
         /* margin: 10% auto;  */
         border-radius:5px; 
-        /* position: absolute; */
-        /* left: 50%; */
-        /* top: 50%; */
-        /* transform: translate(-50%, -50%); */
+        position: absolute; 
+        left: 50%;
+        top: 50%;
+         transform: translate(-50%, -50%); 
     }
     .heading{display:flex; justify-content: space-between;}
     /* h1 {float:left;}	 
