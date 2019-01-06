@@ -190,7 +190,7 @@ button:hover{
     .container    { order: 2; }
     .aside-2 { order: 3; }
     .footer  { order: 4; margin-top: 2%}
-    }
+   
       
     .controls>span{
         display: inline;
@@ -218,5 +218,5 @@ button:hover{
 
     p{clear:both;} */
 
-
+}
 
